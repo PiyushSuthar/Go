@@ -33,7 +33,7 @@
             } else {
                 if(url != "") {
                     window.onload = function() {
-                        alert("Location blocked. Read Limits.");	
+                        document.getElementById('alert').innerHTML = "Add https:// or http:// in your url.";	
                     }
                 }
             }
@@ -55,12 +55,13 @@
             <p>Your URL:</p>
             <input id="url" placeholder="URL" value="" name="url" type="text">
             <button onclick="generate()">Generate</button>
-
+            <div id="alert"></div>
 
             <div class="result">
             <h4 id="test">Result</h4>
             <input type="text" name="result" id="result">
             <button onclick="copy()">Copy Link</button>
+            <div id="copied-alert"></div>
                 </div>
                 <br>
             <footer>
@@ -87,7 +88,7 @@
                         document.execCommand("copy");
 
                         /* Alert the copied text */
-                        alert("Link Copied. :)");
+                        document.getElementById('copied-alert').innerHTML = "Link Copied";
                 }
 
                 
