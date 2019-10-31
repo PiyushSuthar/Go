@@ -32,10 +32,13 @@
                 }
             } else {
                 if(url != "") {
-                    window.onload = function() {
-                        document.getElementById('alert').innerHTML = "Add https:// or http:// in your url.";
-                        alert('Add https:// or http:// in your url.')	
-                    }
+                    window.onload = function(e) {
+                    var redirect = document.getElementById('main');
+                    redirect.innerHTML = "Redirecting in 3 Seconds";
+                    setTimeout(function() {
+                        location.replace("http://"+url);
+                    }, 3000);
+                }
                 }
             }
         </script>
