@@ -24,27 +24,40 @@
             var url = location.hash.slice(2);
             if(url.substring(0,4) == "http") {
                 window.onload = function(e) {
-                    var redirect = document.getElementById('main');
-                    redirect.innerHTML = "Redirecting in 3 Seconds";
+                    var main = document.getElementById('main').style.display = 'none';
+                    var redirect = document.getElementById('link');
+                    redirect.innerHTML = "<p id='p'>Link In 5 Seconds.</p> <br> <a id='button' href=''><button id='loading'>Wait Loading</button></a>";
                     setTimeout(function() {
-                        location.replace(url);
-                    }, 3000);
+                        var loadingButton = document.getElementById('loading').innerHTML = 'Click To Visit';
+                        var button = document.getElementById('button').href = url;
+                        var p = document.getElementById('p').innerHTML = 'Link Proccesing Completed.';
+                    }, 5000);
                 }
+            
             } else {
                 if(url != "") {
                     window.onload = function(e) {
-                    var redirect = document.getElementById('main');
-                    redirect.innerHTML = "Redirecting in 3 Seconds";
+                    var main = document.getElementById('main').style.display = 'none';
+                    var redirect = document.getElementById('link');
+                    redirect.innerHTML = "<p id='p'>Link In 5 Seconds.</p> <br> <a id='button' href=''><button id='loading'>Wait Loading</button></a>";
                     setTimeout(function() {
-                        location.replace("http://"+url);
-                    }, 3000);
+                        var loadingButton = document.getElementById('loading').innerHTML = 'Click To Visit';
+                        var button = document.getElementById('button').href ="http://" + url;
+                        var p = document.getElementById('p').innerHTML = 'Link Proccesing Completed.';
+                    }, 5000);
                 }
                 }
             }
         </script>
        
-    <div id="main" class="main">
+    
         <h1>Go</h1>
+
+        <div id="link" style="text-align: center;" class="link">
+
+        </div>
+
+        <div id="main" class="main">
         <div >
             To redirect to your url, change the <kbd>URL</kbd> with your url
             <br>
