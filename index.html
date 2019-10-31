@@ -24,8 +24,8 @@
             var url = location.hash.slice(2);
             if(url.substring(0,4) == "http") {
                 window.onload = function(e) {
-                    var redirect = document.getElementsByClassName('main');
-                    redirect.innerHTML = "Redirecting...";
+                    var redirect = document.getElementById('main');
+                    redirect.innerHTML = "Redirecting in 3 Seconds";
                     setTimeout(function() {
                         location.replace(url);
                     }, 3000);
@@ -39,13 +39,13 @@
             }
         </script>
        
-    <div class="main">
+    <div id="main" class="main">
         <h1>REDIRECT</h1>
-        <div id="main">
+        <div >
             To redirect to your url, change the <kbd>URL</kbd> with your url
             <br>
             <br>
-            https://piyushsuthar.github.io/redirect/#/<kbd>URL</kbd>
+            https://piyushsuthar.github.io/Go/#/<kbd>URL</kbd>
         </div>
 <br>
         <div class="generator">
@@ -70,7 +70,7 @@
                 function generate(){
                     var url = document.getElementById('url');
                     var u2 = url.value;
-                    var u1 = "https://piyushsuthar.github.io/redirect/#/";
+                    var u1 = "https://piyushsuthar.github.io/Go/#/";
                     var result = document.getElementById('result');
                     result.value = u1 + u2;
                     
